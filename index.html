@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <style>
+
+    /* --- BASE --- */
+        body { 
+            font-family: sans-serif; 
+            background: #333; 
+            margin: 0; 
+        }
+
+    /* --- LAYOUT --- */
+        .l-center {       
+            width: 400px;
+            margin: 50px auto;
+        }
+
+    /* --- MODULE --- */
+        .player {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .player__art {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .player__title {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .player__artist {
+            margin: 5px 0 20px;
+            color: #aaa;
+        }
+
+        .player__progress {
+            width: 100%;
+            height: 5px;
+            background: #555;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .player__progress-fill {
+            width: 40%;
+            height: 100%;
+            background: #1db954;
+        }
+
+    /* --- STATE --- */
+        .is-playing {
+            border: 2px solid #1db954;
+        }
+
+        .is-paused .player__art{
+            opacity: 0.4;
+        }
+
+    /* --- THEME --- */
+        .theme-retro {
+            font-family: Roboto;
+            font-weight: bold;
+        }
+
+    /* --- OOCSS --- */
+        .btn-control {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .skin-primary {
+            background: #1db954;
+            color: white;
+        }
+
+        .skin-secondary {
+            background: #444;
+            color: white;
+        }
+
+    </style>
+</head>
+<body class="theme-retro">
+<!-- Utilizar la class is-paused para la opacidad cuando este pausado y is-playing para quitar la opacidad cuando este reproduciendo -->
+  <div class="player l-center is-paused">
+    <img class="player__art" src="portada.jpg" alt="Album Art">
+    <h2 class="player__title">more than words</h2>
+    <p class="player__artist">Hitsujibungaku</p>
+    
+    <div class="player__progress">
+      <div class="player__progress-fill"></div>
+    </div>
+
+    <div>
+      <button class="btn-control skin-secondary">⏮</button>
+      <button class="btn-control skin-primary">▶ Play</button>
+      <button class="btn-control skin-secondary">⏭</button>
+    </div>
+  </div>
+
+</body>
+</html>
